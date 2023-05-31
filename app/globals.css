@@ -2,26 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
-
 body {
-  color: rgb(var(--foreground-rgb));
+  position: relative;
+  font-family: 'IBM Plex Mono', monospace;
+  box-sizing: border-box;
+  user-select: none;
+}
+.banner {
+  height: 80vh;
+  background-image: url('/media/banner-image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 1136px;
+  margin: 0 auto;
+}
+
+.banner .main-heading {
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  font-weight: 700;
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    180deg,
+    rgba(255, 255, 255, 0.5) 6.44%,
+    #ffffff 95.08%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.highlights-section {
+  padding: 80px 10px;
+}
+
+.categories_and_travel_guide-section {
+  padding: 80px 10px;
+  background-color: #e6f2f2;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #999 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
 }
